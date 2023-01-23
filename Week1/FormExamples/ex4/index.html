@@ -1,12 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>jQuery Validator Plugin Example</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery Validator Plugin Example</title>
 
-	<style>
-
-	/*
+    <style>
+      
 	label.error {
 		color:#D40004;
 		display:block;
@@ -15,36 +14,48 @@
 		font-size:24px;
 		text-transform:uppercase;
 	}
-	*/
-
-	</style>
-
-</head>
-
-<body>
-
-	<h1>Basic Form Validation - jQuery Validator Plugin (simple version)</h1>
-	<form action="processor.php" method="post" id="myForm">
-    
-    	<p><label for="name">Name</label><br>
-		<input id="name" name="name" type="text"></p>
-        
-        <p><label for="email">Email</label><br>
-        <input id="email" name="email" type="email"></p>
-        
-        <p><label for="url">Website</label><br>
-        <input id="url" name="url" type="url"></p>
-        
-        <p><label for="comments">Comments</label><br>
-    	<textarea id="comments" name="comments" cols="40" rows="10" ></textarea></p>
-        
-        <p><input id="send"  name="send" type="submit" value="send it"></p>
-    
-    </form>
 	
-	<!-- add link to jQuery library here -->
-	<!-- add validator plugin here -->
-	<!-- Run the validator plugin with your own script here -->
+    </style>
+  </head>
 
-</body>
+  <body>
+    <h1>Basic Form Validation - jQuery Validator Plugin (simple version)</h1>
+    <form action="processor.php" method="post" id="myForm">
+      <p>
+        <label for="name">Name</label><br />
+        <input id="name" name="name" type="text" required />
+      </p>
+
+      <p>
+        <label for="email">Email</label><br />
+        <input id="email" name="email" type="email" required />
+      </p>
+
+      <p>
+        <label for="url">Website</label><br />
+        <input id="url" name="url" type="url" />
+      </p>
+
+      <p>
+        <label for="comments">Comments</label><br />
+        <textarea
+          id="comments"
+          name="comments"
+          cols="40"
+          rows="10"
+          required
+        ></textarea>
+      </p>
+
+      <p><input id="send" name="send" type="submit" value="send it" /></p>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- add validator plugin here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <!-- Run the validator plugin with your own script here -->
+    <script>
+      $("#myForm").validate();
+    </script>
+  </body>
 </html>
